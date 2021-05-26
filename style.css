@@ -24,7 +24,7 @@
 }
 
 .customer-card > img {
-    border-radius: 50px;
+    border-radius: 10px 100px / 120px;
     padding: 2px;
 }
 
