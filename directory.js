@@ -27,10 +27,10 @@ for (let customer of customers) {
     customerTown.innerText = customer.location.city + ", " + " " + nameToAbbr(customer.location.state) + " " + customer.location.postcode
     customerCard.appendChild(customerTown)
     const dateOfBirth = document.createElement ('h2')
-    dateOfBirth.innerText = "DOB:" + " " + moment(customer.dob.date).format("MMM, D, YYYY")
+    dateOfBirth.innerText = "DOB:" + " " + moment(customer.dob.date).format("MMM D, YYYY")
     customerCard.appendChild(dateOfBirth)
     const customerRegistration = document.createElement('h2')
-    customerRegistration.innerText = "Customer since:" + " " + moment(customer.registered.date).format("MMM, D, YYYY")
+    customerRegistration.innerText = "Customer since:" + " " + moment(customer.registered.date).format("MMM D, YYYY")
     customerCard.appendChild(customerRegistration)
 }
 
