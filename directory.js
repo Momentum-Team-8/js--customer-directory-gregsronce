@@ -5,36 +5,35 @@ document.getElementById('header').appendChild(divHeader);
 
 // loop to create page
 const customer = customers[0]
+moment(customer.dob.date).format("MMM, D, YYYY")
 const insertionPoint = document.querySelector('#output')
 
 for (let customer of customers) {
     const customerCard = document.createElement('div')
     customerCard.classList.add('customer-card')
     insertionPoint.appendChild(customerCard)
-    console.log(customerCard)
     const customerImage = document.createElement('img')
     customerImage.src = customer.picture.large
     customerCard.appendChild(customerImage)
-    const customerName = document.createElement('div')
+    const customerName = document.createElement('h1')
     customerName.innerText = customer.name.first + " " + customer.name.last 
     customerCard.appendChild(customerName)
-    const customerEmail = document.createElement('div')
+    const customerEmail = document.createElement('p')
     customerEmail.innerText = customer.email
     customerCard.appendChild(customerEmail)
-    const customerAddress = document.createElement('div')
+    const customerAddress = document.createElement('h2')
     customerAddress.innerText = customer.location.street.number + " " + customer.location.street.name
     customerCard.appendChild(customerAddress)
-    const customerTown = document.createElement('div')
-    customerTown.innerText = customer.location.city + ", " + " " + customer.location.state + " " + customer.location.postcode
+    const customerTown = document.createElement('h2')
+    customerTown.innerText = customer.location.city + ", " + " " + nameToAbbr(customer.location.state) + " " + customer.location.postcode
     customerCard.appendChild(customerTown)
-    const dateOfBirth = document.createElement ('div')
-    dateOfBirth.innerText = "DOB" + " " + customer.dob.date
+    const dateOfBirth = document.createElement ('h2')
+    dateOfBirth.innerText = "DOB:" + " " + moment(customer.dob.date).format("MMM, D, YYYY")
     customerCard.appendChild(dateOfBirth)
-    const customerRegistration = document.createElement('div')
-    customerRegistration.innerText = "Customer since:" + " " + customer.registered.date
+    const customerRegistration = document.createElement('h2')
+    customerRegistration.innerText = "Customer since:" + " " + moment(customer.registered.date).format("MMM, D, YYYY")
     customerCard.appendChild(customerRegistration)
 }
-
 
 
 
