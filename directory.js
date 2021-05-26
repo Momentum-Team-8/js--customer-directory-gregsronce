@@ -5,7 +5,6 @@ document.getElementById('header').appendChild(divHeader);
 
 // loop to create page
 const customer = customers[0]
-moment(customer.dob.date).format("MMM, D, YYYY")
 const insertionPoint = document.querySelector('#output')
 
 for (let customer of customers) {
